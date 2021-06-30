@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Project 2 - FYS-STK4155</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">FYS-STK4155</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="project1.html" class="nav-link">Project 1</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="project2.html" class="nav-link">Project 2</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="project3.html" class="nav-link">Project 3</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="project1.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="project3.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/meudnaes/FYS-STK4155/edit/master/docs/project2.md" class="nav-link">Edit on meudnaes/FYS-STK4155</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#project-2-fys-stk4155-autumn-2020" class="nav-link">Project 2 FYS-STK4155 Autumn 2020</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#classification-and-regression-from-linear-and-logistic-re-gression-to-neural-networks" class="nav-link">Classification and Regression, from linear and logistic re-gression to neural networks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="project-2-fys-stk4155-autumn-2020">Project 2 FYS-STK4155 Autumn 2020</h1>
+<h2 id="classification-and-regression-from-linear-and-logistic-re-gression-to-neural-networks">Classification and Regression, from linear and logistic re-gression to neural networks</h2>
+<p>In this project, we explore stochastic gradient descent and feedforward neural networks with back-propagation.</p>
+<p>First off, we wish to thank Elin Finstad and Anders Bråte for collaboration and great discussions. We also wish to thank the FYS-STK4155 team for all help.</p>
+<p>To run the programs we have made, download our repository and make sure you are in the src folder.</p>
+<pre><code class="language-bash">cd src
+</code></pre>
+<p>Now, you can run the scripts. We recommend starting off with analysing stochastic gradient descent on the Franke data set.
+You can do this by running the regression script:</p>
+<pre><code class="language-bash">python3 regression.py
+</code></pre>
+<p>Now your terminal will hopefully give you the options to analyse minibatches and epochs. Respond with Y for yes or n for no.
+The other option to analyse is learning schedule. Both analyses produce a heatmap and saves them in the folder <code>figures</code>. This program takes a few minutes to run. If you don't have 5 minutes, we recommend running the NN script. We have included a progress bar so you can track the progress.</p>
+<p>The next script we recommend to analyse is the neural network (NN), which analyses the Franke function when run. Run the following command</p>
+<pre><code class="language-bash">python3 NN.py
+</code></pre>
+<p>Now you will get following options to analyse</p>
+<ul>
+<li>
+<p>learning rate vs epochs</p>
+</li>
+<li>
+<p>learning rate vs penalty parameter</p>
+</li>
+<li>
+<p>Keras (performs analysis of learning rate and penalty parameter using Keras library)</p>
+</li>
+<li>
+<p>relu activation (learning rate vs epochs) (changes activation function in hidden layers)</p>
+</li>
+</ul>
+<p>Note that the analysis with Keras takes some time. The quickest analysis to perform is the first option, learning rate vs epochs. This is the analysis we recommend performing to test our code. All analyses produces heatmaps and saves them in the folder <code>figures</code>, and all analyses comes with a progress bar to track progress.</p>
+<p>The last script we have made easy to analyse is <code>digit.py</code>. This is the script which trains the network on the handwritten digits from MNIST. Run the program with</p>
+<pre><code class="language-bash">python3 digit.py
+</code></pre>
+<p>The program will by default produce a confusion matrix which shows how the network predicts digits. Optionally, you can analyse how learning rate and penalty
+penalty parameter changes the networks' performance. Simply press y and hit enter when the terminal asks you</p>
+<p><code>Analyse penalty parameter and learning rate [Y/n]:</code></p>
+<p>Keep in mind that different random seeds in the neural network affects results.</p>
+<p>The last program we have is <code>log-reg.py</code>, which performs logistic regression. This program uses logistic regression to analyse digits from MNIST. It produces a heatmap of accuracy from both scikit learn and our own neural network with no hidden layers. It also produces a confusion matrix from our network. To run this program:</p>
+<pre><code class="language-bash">python3 log-reg.py
+</code></pre>
+<p>All other scripts in the folder <code>src</code> contain support functions.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
